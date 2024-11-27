@@ -4,3 +4,5 @@
 /strategies
 /new.py
 /data/connfirebase.ipynb
+
+.env
