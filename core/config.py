@@ -1,15 +1,20 @@
 import pyrebase
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env
+load_dotenv()
 
 config = {
-  'apiKey': "AIzaSyAhgF-CZ8hCzYBGVuE155oc54wxZlrJEnY",
-  'authDomain': "cnttnc-cchq.firebaseapp.com",
-  'databaseURL': "https://cnttnc-cchq-default-rtdb.asia-southeast1.firebasedatabase.app",
-  'projectId': "cnttnc-cchq",
-  'storageBucket': "cnttnc-cchq.firebasestorage.app",
-  'messagingSenderId': "788624377526",
-  'appId': "1:788624377526:web:80a54c3e838607cd2bc817",
-  'measurementId': "G-ZMW3TWKFJV"
-};
+    'apiKey': os.getenv('FIREBASE_API_KEY'),
+    'authDomain': os.getenv('FIREBASE_AUTH_DOMAIN'),
+    'databaseURL': os.getenv('FIREBASE_DATABASE_URL'),
+    'projectId': os.getenv('FIREBASE_PROJECT_ID'),
+    'storageBucket': os.getenv('FIREBASE_STORAGE_BUCKET'),
+    'messagingSenderId': os.getenv('FIREBASE_MESSAGING_SENDER_ID'),
+    'appId': os.getenv('FIREBASE_APP_ID'),
+    'measurementId': os.getenv('FIREBASE_MEASUREMENT_ID')
+}
 
 class FirebaseClient:
     _instance = None
@@ -22,6 +27,4 @@ class FirebaseClient:
 
 firebase = FirebaseClient()
 
-# auth = firebase.auth()
 db = firebase.database()
-# storage = firebase.storage()

@@ -7,5 +7,7 @@ class User(BaseModel):
     password: str
     date: str
     gender: bool
+    info: str
     role: str 
     cart: list[str]
+    history: list[str]
