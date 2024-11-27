@@ -13,3 +13,11 @@ starlette==0.38.2
 typing_extensions==4.11.0
 uvicorn==0.30.6
 wheel==0.44.0
+pycryptodome==3.10.1
+requests==2.32.3
+pandas
+tqdm==4.66.5
+imblearn
+beautifulsoup4==4.12.3
+bs4==0.0.2
+Pyrebase4
