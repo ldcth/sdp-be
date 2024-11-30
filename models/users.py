@@ -3,14 +3,14 @@ from typing import List, Optional, Type
 
 # Lớp cha chung User
 class User(BaseModel):
-    id: str
+    id: int
     name: str
     username: str
     password: str
     date: str
-    gender: bool
-    info: str
-    phone: str
+    gender: bool = True
+    info: str = ""
+    phone: str = ""
     role: str
     
     @field_validator("phone")
@@ -26,23 +26,23 @@ class User(BaseModel):
 
 # Lớp con Admin
 class Admin(User):
-    permissions: List[str]  # Danh sách quyền của Admin
-    managed_users: Optional[List[str]] = []  # Danh sách ID người dùng mà Admin quản lý
+    permissions: str = "crud"  # Danh sách quyền của Admin
+    # managed_users: Optional[List[str]] = []  # Danh sách ID người dùng mà Admin quản lý
 
 
 # Lớp con RegularUser
 class RegularUser(User):
     # subscription_type: Optional[str] = None  # Loại gói đăng ký (nếu có)
     # wishlist: List[str]  # Danh sách sách mong muốn
-    cart: List[str]
-    history: List[str]
+    cart: List[str] = []
+    history: List[str] = []
 
 
 # Lớp con DeliveryMan
 class DeliveryMan(User):
     # vehicle: str  # Loại phương tiện giao hàng
-    history: List[str]
-    region: str
+    history: List[str] = []
+    region: str = ""
     # rating: List[int]
 
 

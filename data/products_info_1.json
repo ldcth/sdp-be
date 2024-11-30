@@ -1,18 +1,5 @@
 [
     {
-        "id": null,
-        "name": null,
-        "price": null,
-        "description": "",
-        "authors": [],
-        "quantity": null,
-        "image_urls": [],
-        "rating_average": null,
-        "review_count": null,
-        "quantity_sold": null,
-        "category": null
-    },
-    {
         "id": 276159943,
         "name": "NEXUS - Lược Sử Của Những Mạng Lưới Thông Tin Từ Thời Đại Đồ Đá Đến Trí Tuệ Nhân Tạo",
         "price": 240500,
@@ -4815,7 +4802,7 @@
                 "name": "Phạm Văn Hòa (sưu tầm và kể lại)"
             }
         ],
-        "quantity": 0,
+        "quantity": 36,
         "image_urls": [
             "https://salt.tikicdn.com/cache/w1200/ts/product/69/b1/22/f5e43947446e191df11b308e1da157a4.jpg",
             "https://salt.tikicdn.com/cache/w1200/ts/product/a4/25/27/361b7b28ef8334b8b2696aabedc7a3cb.jpg",
