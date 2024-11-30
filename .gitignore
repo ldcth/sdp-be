@@ -4,6 +4,8 @@
 /strategies
 /new.py
 /data/connfirebase.ipynb
+/service
+/router
 
 .env
 /.env

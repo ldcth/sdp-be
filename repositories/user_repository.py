@@ -1,25 +1,28 @@
-from db_repository import FirebaseService
+from repositories.db_repository import FirebaseService
+from models.users import User  
 
 class UserRepository:
     def __init__(self):
-        self.collection_name = "users"
+        self.collection_name = "user"
 
-    @staticmethod
     def create_user(self, user_data: dict):
-        FirebaseService.add_data(self.collection_name, user_data)
+        # Xác thực dữ liệu đầu vào bằng class User
+        user = User(**user_data)  # Tạo đối tượng User
+        FirebaseService.add_data(self.collection_name, user.dict())  # Lưu vào Firebase
 
-    @staticmethod
     def get_all_users(self):
-        return FirebaseService.get_data(self.collection_name)
+        data = FirebaseService.get_data(self.collection_name)
+        # Chuyển dữ liệu Firebase thành danh sách các đối tượng User
+        return [User(**user) for user in data]
 
-    @staticmethod
     def get_user_by_id(self, user_id: str):
-        return FirebaseService.get_data_by_key(self.collection_name, user_id)
+        data = FirebaseService.get_data_by_key(self.collection_name, user_id)
+        # Chuyển dữ liệu Firebase thành một đối tượng User
+        return User(**data)
 
-    @staticmethod
     def update_user(self, user_id: str, user_data: dict):
-        FirebaseService.update_data(self.collection_name, user_id, user_data)
+        user = User(**user_data)  # Xác thực và tạo đối tượng User
+        FirebaseService.update_data(self.collection_name, user_id, user.dict())
 
-    @staticmethod
     def delete_user(self, user_id: str):
         FirebaseService.delete_data(self.collection_name, user_id)

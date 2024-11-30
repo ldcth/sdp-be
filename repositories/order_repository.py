@@ -1,4 +1,4 @@
-from db_repository import FirebaseService
+from repositories.db_repository import FirebaseService
 
 class OrderRepository:
     def __init__(self):
